@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theyurii.xyz | TheYurii's site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: '#00ff00',
+                        darkbg: '#0a0a0a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #00ff00; }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-300 font-mono antialiased min-h-screen flex flex-col">
+
+    <header class="border-b border-gray-800 p-6">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-cyber tracking-widest">
+                > theyurii<span class="animate-pulse">_</span>
+            </h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-cyber transition-colors">[ O mnie ]</a>
+                <a href="#projects" class="hover:text-cyber transition-colors">[ Projekty ]</a>
+                <a href="#contact" class="hover:text-cyber transition-colors">[ Kontakt ]</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto p-6 w-full">
+        <section id="about" class="py-12 md:py-20">
+            <p class="text-cyber mb-2">root@theyurii:~$ whoami</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Placeholder</h2>
+            <p class="text-lg text-gray-400 max-w-2xl leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non nibh molestie, hendrerit orci ac, mattis libero. Quisque egestas et arcu at ornare. Suspendisse potenti. Curabitur suscipit vestibulum erat, non posuere dolor lobortis non. Cras consectetur, tellus at sodales feugiat, quam ante bibendum mauris, ut aliquet dui diam eu nisl. Nam ultricies tincidunt leo sit amet rutrum. Donec ut varius turpis. Mauris faucibus interdum tortor, quis imperdiet felis dictum aliquet. Curabitur et neque sed ex commodo vehicula at et ex. Phasellus molestie enim vel nulla efficitur ultrices. Pellentesque at fermentum urna, fermentum feugiat augue.
+            </p>
+        </section>
+
+        <section id="projects" class="py-12 border-t border-gray-800">
+            <p class="text-cyber mb-6">root@theyurii:~$ ls -la ./projects</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Portal Gun</h3>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">3D Printing</span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Hardware</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Portal Gun realnej wielkości, posiadający oświetlenie i wydający dźwięki. Idealne rozwiązanie do cosplayu.</p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">tu nazwa</h3>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
+                    </div>
+                    <p class="text-sm text-gray-400">cos</p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">tu nazwa</h3>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
+                    </div>
+                    <p class="text-sm text-gray-400">cos</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="university" class="py-12 border-t border-gray-800">
+            <p class="text-cyber mb-6">root@theyurii:~$ ls -la ./university</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div onclick="openModal(this)" 
+                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     data-title="Konsolowa gra Bingo w C++"
+                     data-desc="Dluzszy opis"
+                     data-link="https://github.com/thematiig17/bingo-game-cpp">
+
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Gra Bingo</h3>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">C++</span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Gaming</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Gra konsolowa losuje liczby zgodnie z zasadami Bingo, generuje karty dla graczy oraz sprawdza wyniki.</p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Aplikacja WeNeedToCook</h3>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">C++</span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">QML</span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Mobile</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Celem projektu było stworzenie mobilnej aplikacji do zarządzania domową lodówką, przepisami kulinarnymi oraz listą zakupów.</p>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SealParadise</h3>
+                    <div class="flex space-x-2 mb-4">
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Java</span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Minecraft</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Modyfikacja do gry Minecraft dodająca 4 foki i foczy wymiar. Napisana za pomocą modloadera Fabric.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-12 border-t border-gray-800">
+            <p class="text-cyber mb-4">root@theyurii:~$ cat ./contact.txt</p>
+            <div class="bg-gray-900 border border-gray-800 p-6 rounded inline-block">
+                <p class="text-gray-300">Email: <a href="mailto:kontakt@theyurii.xyz" class="text-cyber hover:underline">kontakt@theyurii.xyz</a></p>
+                <p class="text-gray-300">GitHub: <a href="http://www.github.com/thematiig17" class="text-cyber hover:underline">github.com/thematiig17</a></p>
+            </div>
+        </section>
+    </main>
+
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+    
+        <div onclick="closeModal()" class="cursor-pointer absolute inset-0 bg-black/80 hover:bg-black/85 transition-colors"></div>
+
+            <div id="modal-content" class="relative z-10 bg-gray-900 border border-cyber w-full max-w-2xl p-6 rounded shadow-2xl transform scale-95 transition-transform duration-300">
+                
+                <div class="flex justify-between items-center mb-4 border-b border-gray-800 pb-2">
+                    <h3 id="modal-title" class="text-2xl font-bold text-cyber">Szczegóły Projektu</h3>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-red-500 font-bold text-xl">
+                        [X]
+                    </button>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-gray-800 h-48 rounded flex items-center justify-center text-gray-500 border border-gray-700">
+                        [ Tu screenshot ]
+                    </div>
+                    
+                    <p id="modal-desc" class="text-gray-300 leading-relaxed">
+                    </p>
+                    
+                    <div class="pt-4">
+                        <a id="modal-link" href="#" target="_blank" class="inline-block border border-cyber text-cyber px-4 py-2 hover:bg-cyber hover:text-black transition-colors">
+                            > Zobacz kod na GitHubie
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+        const modalWrapper = document.getElementById('project-modal');
+        const modalWindow = document.getElementById('modal-content');
+
+        const titleDest = document.getElementById('modal-title');
+        const descDest = document.getElementById('modal-desc');
+        const linkDest = document.getElementById('modal-link');
+
+        function openModal(selectedProject) {
+            const projectTitle = selectedProject.getAttribute('data-title');
+            const projectDesc = selectedProject.getAttribute('data-desc');
+            const projectLink = selectedProject.getAttribute('data-link');
+
+            titleDest.textContent = projectTitle;
+            descDest.textContent = projectDesc;
+            linkDest.href = projectLink;
+
+            modalWrapper.classList.remove('opacity-0', 'pointer-events-none');
+            modalWrapper.classList.add('opacity-100', 'pointer-events-auto');
+
+            modalWindow.classList.remove('scale-95');
+            modalWindow.classList.add('scale-100');
+        }
+        function closeModal() {
+            modalWrapper.classList.remove('opacity-100', 'pointer-events-auto');
+            modalWrapper.classList.add('opacity-0', 'pointer-events-none');
+            
+            modalWindow.classList.remove('scale-100');
+            modalWindow.classList.add('scale-95');
+    }
+
+    //Zamkniecie okna po wcisnieciu ESC.
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            if (!modalWrapper.classList.contains('opacity-0')) {
+                closeModal();
+            }
+        }
+    });
+    </script>
+
+    <footer class="border-t border-gray-800 p-6 text-center text-gray-600 text-sm">
+        <p>TheYurii 2026</p>
+    </footer>
+
+</body>
+</html>
