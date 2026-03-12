@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>theyurii.xyz | TheYurii's site</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> --> 
-    <script src="tailwind.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="tailwind.js"></script> -->
     <script>
         tailwind.config = {
             theme: {
@@ -63,7 +63,7 @@
                      class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
                      data-title="Portal Gun - Projekt łączący hardware i druk 3d."
                      data-desc="Dluzszy opis"
-                     data-link="https://github.com/thematiig17/seal-paradise"
+                     data-link="hidden"
                      data-image="/img/PortalGun.jpg">
                     <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Portal Gun</h3>
                     <div class="flex space-x-2 mb-4">
@@ -77,7 +77,7 @@
                      class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
                      data-title="SolarDash - Ekran z statystkiami instalacji fotowoltaicznej"
                      data-desc="Dluzszy opis"
-                     data-link=""
+                     data-link="hidden"
                      data-image="/img/solardash.jpg">
                     <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SolarDash</h3>
                     <div class="flex space-x-2 mb-4">
@@ -108,9 +108,10 @@
                      class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
                      data-title="Konsolowa gra Bingo w C++"
                      data-desc="Dluzszy opis"
-                     data-link="https://github.com/thematiig17/bingo-game-cpp">
+                     data-link="https://github.com/thematiig17/bingo-game-cpp"
+                     data-image="/img/bingogame.jpg">
 
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Gra Bingo</h3>
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Gra Bingo <p class="text-gray-500">Semestr 1</p></h3>
                     <div class="flex space-x-2 mb-4">
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">C++</span>
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Gaming</span>
@@ -122,8 +123,9 @@
                      class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
                      data-title="Aplikacja do zarządzania lodówką i przepisami kulinarnymi"
                      data-desc="Dluzszy opis"
-                     data-link="https://github.com/thematiig17/WeNeedToCook-mobile">
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Aplikacja WeNeedToCook</h3>
+                     data-link="https://github.com/thematiig17/WeNeedToCook-mobile"
+                     data-image="/img/weneedtocook.jpg">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Aplikacja WeNeedToCook <p class="text-gray-500">Semestr 2</p></h3>
                     <div class="flex space-x-2 mb-4">
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">C++</span>
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">QML</span>
@@ -139,7 +141,7 @@
                      data-link="https://github.com/thematiig17/seal-paradise"
                      data-image="/img/sealparadise.jpg">
 
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SealParadise</h3>
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SealParadise <p class="text-gray-500">Semestr 3</p></h3>
                     <div class="flex space-x-2 mb-4">
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Java</span>
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Minecraft</span>
@@ -205,7 +207,19 @@
 
             titleDest.textContent = projectTitle;
             descDest.textContent = projectDesc;
-            linkDest.href = projectLink;
+
+            if(projectLink == "hidden") {
+                linkDest.textContent = "Brak kodu na GitHub.";
+                linkDest.classList.remove('hover:bg-cyber', 'hover:text-black')
+                linkDest.href = "";
+                
+            }
+            else {
+                linkDest.textContent = "> Zobacz kod na GitHubie";
+                linkDest.href = projectLink;
+                linkDest.classList.add('hover:bg-cyber', 'hover:text-black')
+            }
+            
             imageDest.src = projectImage;
 
             modalWrapper.classList.remove('opacity-0', 'pointer-events-none');
