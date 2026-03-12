@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>theyurii.xyz | TheYurii's site</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> --> 
+    <script src="tailwind.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -41,33 +42,49 @@
     <main class="flex-grow max-w-5xl mx-auto p-6 w-full">
         <section id="about" class="py-12 md:py-20">
             <p class="text-cyber mb-2">root@theyurii:~$ whoami</p>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Placeholder</h2>
+            <h2 class="text-4xl md:text-4xl font-bold text-white mb-6">Pasjonat techonologii i informatyki</h2>
             <p class="text-lg text-gray-400 max-w-2xl leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non nibh molestie, hendrerit orci ac, mattis libero. Quisque egestas et arcu at ornare. Suspendisse potenti. Curabitur suscipit vestibulum erat, non posuere dolor lobortis non. Cras consectetur, tellus at sodales feugiat, quam ante bibendum mauris, ut aliquet dui diam eu nisl. Nam ultricies tincidunt leo sit amet rutrum. Donec ut varius turpis. Mauris faucibus interdum tortor, quis imperdiet felis dictum aliquet. Curabitur et neque sed ex commodo vehicula at et ex. Phasellus molestie enim vel nulla efficitur ultrices. Pellentesque at fermentum urna, fermentum feugiat augue.
-            </p>
+                Aktualnie jestem studentem drugiego roku informatyki na Politechnice Śląskiej. Informatyka i technologia od zawsze była dużą częścią mojego życia. Od kiedy pamiętam stawiałem serwery, konfigurowałem komputery i uczyłem się programowania. Na studiach zdobyłem kompleksową wiedze z dziedziny działania sieci komputerowych, obsługi systemów operacyjnych i programowania obiektowego.
+                <br><br>
+                Zamierzam dalej rozwijać się w kierunku
+                <p class="font-bold text-2xl">
+                cyberbezpieczeństwa. 
+                </p>
         </section>
 
         <section id="projects" class="py-12 border-t border-gray-800">
-            <p class="text-cyber mb-6">root@theyurii:~$ ls -la ./projects</p>
+            <p class="text-cyber inline">root@theyurii:~$ ls -la ./projects <p class="text-gray-500 inline"># Kliknij na projekt aby poznać szczegóły</p></p>
+
+            <p class="mb-6"></p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                <div onclick="openModal(this)"
+                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     data-title="Portal Gun - Projekt łączący hardware i druk 3d."
+                     data-desc="Dluzszy opis"
+                     data-link="https://github.com/thematiig17/seal-paradise"
+                     data-image="/img/PortalGun.jpg">
                     <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Portal Gun</h3>
                     <div class="flex space-x-2 mb-4">
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">3D Printing</span>
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Hardware</span>
                     </div>
-                    <p class="text-sm text-gray-400">Portal Gun realnej wielkości, posiadający oświetlenie i wydający dźwięki. Idealne rozwiązanie do cosplayu.</p>
+                    <p class="text-sm text-gray-400">Portal Gun realnej wielkości, posiadający oświetlenie i wydający dźwięki. Stworzony z myślą o cosplayu na prezent.</p>
                 </div>
 
-                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
-                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">tu nazwa</h3>
+                <div onclick="openModal(this)"
+                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     data-title="SolarDash - Ekran z statystkiami instalacji fotowoltaicznej"
+                     data-desc="Dluzszy opis"
+                     data-link=""
+                     data-image="/img/solardash.jpg">
+                    <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SolarDash</h3>
                     <div class="flex space-x-2 mb-4">
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
-                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded"></span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">IoT</span>
+                        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Python</span>
                     </div>
-                    <p class="text-sm text-gray-400">cos</p>
+                    <p class="text-sm text-gray-400">Urządzenie z ekranem E-Papier wyświetlające dane o stanie instalacji fotowoltaicznej.</p>
                 </div>
 
                 <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
@@ -101,7 +118,11 @@
                     <p class="text-sm text-gray-400">Gra konsolowa losuje liczby zgodnie z zasadami Bingo, generuje karty dla graczy oraz sprawdza wyniki.</p>
                 </div>
 
-                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                <div onclick="openModal(this)"
+                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     data-title="Aplikacja do zarządzania lodówką i przepisami kulinarnymi"
+                     data-desc="Dluzszy opis"
+                     data-link="https://github.com/thematiig17/WeNeedToCook-mobile">
                     <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">Aplikacja WeNeedToCook</h3>
                     <div class="flex space-x-2 mb-4">
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">C++</span>
@@ -111,7 +132,13 @@
                     <p class="text-sm text-gray-400">Celem projektu było stworzenie mobilnej aplikacji do zarządzania domową lodówką, przepisami kulinarnymi oraz listą zakupów.</p>
                 </div>
 
-                <div class="bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group">
+                <div onclick="openModal(this)"
+                     class="cursor-pointer bg-gray-900 border border-gray-800 p-6 rounded hover:border-cyber transition-colors group"
+                     data-title="SealParadise - modyfikacja do Minecrafta"
+                     data-desc="Dluzszy opis"
+                     data-link="https://github.com/thematiig17/seal-paradise"
+                     data-image="/img/sealparadise.jpg">
+
                     <h3 class="text-white text-xl font-bold mb-2 group-hover:text-cyber transition-colors">SealParadise</h3>
                     <div class="flex space-x-2 mb-4">
                         <span class="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">Java</span>
@@ -146,8 +173,8 @@
                 </div>
 
                 <div class="space-y-4">
-                    <div class="bg-gray-800 h-48 rounded flex items-center justify-center text-gray-500 border border-gray-700">
-                        [ Tu screenshot ]
+                    <div class="bg-gray-800 h-70 rounded flex items-center justify-center text-gray-500 border border-gray-700">
+                        <img id="modal-image" src="" alt="Project Image" class="max-h-full max-w-full object-contain">
                     </div>
                     
                     <p id="modal-desc" class="text-gray-300 leading-relaxed">
@@ -168,15 +195,18 @@
         const titleDest = document.getElementById('modal-title');
         const descDest = document.getElementById('modal-desc');
         const linkDest = document.getElementById('modal-link');
+        const imageDest = document.getElementById('modal-image');
 
         function openModal(selectedProject) {
             const projectTitle = selectedProject.getAttribute('data-title');
             const projectDesc = selectedProject.getAttribute('data-desc');
             const projectLink = selectedProject.getAttribute('data-link');
+            const projectImage = selectedProject.getAttribute('data-image');
 
             titleDest.textContent = projectTitle;
             descDest.textContent = projectDesc;
             linkDest.href = projectLink;
+            imageDest.src = projectImage;
 
             modalWrapper.classList.remove('opacity-0', 'pointer-events-none');
             modalWrapper.classList.add('opacity-100', 'pointer-events-auto');
